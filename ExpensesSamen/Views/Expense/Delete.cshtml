@@ -1,0 +1,7 @@
+﻿@model ExpenseDeleteViewModel
+
+<p>Ben je zeker dat je "@Model.Omschrijving" wilt verwijderen?</p>
+
+<form asp-controller="Expense" asp-action="Delete" method="post">
+    <button class="btn btn-danger" type="submit">Delete!</button>
+</form>

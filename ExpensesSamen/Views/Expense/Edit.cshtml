@@ -1,0 +1,30 @@
+﻿@model ExpenseEditViewModel
+
+<form asp-controller="Expense" asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Datum"></label>
+        <input class="form-control" asp-for="Datum" />
+        <span class="text-danger" asp-validation-for="Datum"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bedrag"></label>
+        <input class="form-control" asp-for="Bedrag" />
+        <span class="text-danger" asp-validation-for="Bedrag"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Categorie"></label>
+        <select class="form-control" asp-for="Categorie" asp-items="@Model.MijnList"></select>
+        <span class="text-danger" asp-validation-for="Categorie"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Omschrijving"></label>
+        <input class="form-control" asp-for="Omschrijving" />
+        <span class="text-danger" asp-validation-for="Omschrijving"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Photo"></label>
+        <input class="form-control" asp-for="Photo" />
+        <span class="text-danger" asp-validation-for="Photo"></span>
+    </div>
+    <button class="btn btn-primary" type="submit">Edit!</button>
+</form>

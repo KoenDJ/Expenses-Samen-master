@@ -1,0 +1,9 @@
+﻿@model ExpenseMonthViewModel
+
+<h1 class="header">Maand overzicht (@Model.Date.ToString("yyyyy/MM") )</h1>
+
+<div class="buttons">
+    <a class="btn btn-primary" asp-area="" asp-controller="="expenses" asp-action="month" asp-route-date="@Model.Date.AddMonths(-1)" >Vorige maand</a>
+    <a class="btn btn-primary" asp-area="" asp-controller="=expenses" asp-action="month" asp-route-date ="@Model.Date.AddMonths(1)" >Volgende maand</a>
+</div>
+    

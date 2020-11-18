@@ -1,0 +1,11 @@
+﻿@model ExpenseDetailViewModel
+
+<style>
+    .detail-foto {
+        max-width: 200px;
+    }
+</style>
+
+<p>@Model.Datum <br /> @Model.Bedrag <br /> @Model.Categorie<br />@Model.Omschrijving</p>
+<img src="@Model.PhotoUrl" class="detail-foto"/>
+

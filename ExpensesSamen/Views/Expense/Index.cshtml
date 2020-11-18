@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ExpenseIndexViewModel>
+
+<h1>Expenses</h1>
+
+<a asp-action="Create" asp-controller="Expense">
+    <input class="btn btn-primary" type="button" value="Create" />
+</a>
+
+@if (Model == null || !Model.Any())
+{
+    <p>Er zijn geen expenses</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Omschrijving</th>
+                <th>Bedrag</th>
+                <th>Categorie</th>
+                <th>Datum</th>
+                <th>Detail</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var expense in Model)
+            {
+                <tr>
+                    <td>@expense.Omschrijving</td>
+                    <td>@expense.Bedrag</td>
+                    <td>@expense.Categorie</td>
+                    <td>@expense.Datum.ToString("dd MMMM yyyy")</td>
+                    <td><a asp-action="Detail" asp-controller="Expense" asp-route-id="@expense.Id">Detail</a></td>
+                    <td><a asp-action="Edit" asp-controller="Expense" asp-route-id="@expense.Id">Edit</a></td>
+                    <td><a asp-action="Delete" asp-controller="Expense" asp-route-id="@expense.Id">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
